@@ -1,5 +1,7 @@
 import { Resend } from 'resend';
 
+const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
+
 const resendApiKey = process.env.RESEND_API_KEY || '';
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -14,8 +16,72 @@ export interface RegistrationEmailParams {
 }
 
 /**
+ * Send transactional email via Brevo REST API (300/day 100% Free Plan)
+ */
+export async function sendBrevoEmail({
+  toEmail,
+  toName,
+  subject,
+  htmlContent,
+  pdfBase64,
+  pdfFilename,
+}: {
+  toEmail: string;
+  toName?: string;
+  subject: string;
+  htmlContent: string;
+  pdfBase64?: string;
+  pdfFilename?: string;
+}) {
+  if (!BREVO_API_KEY) {
+    console.warn('⚠️ [Brevo] API key missing.');
+    return { success: false, reason: 'missing_api_key' };
+  }
+
+  const payload: any = {
+    sender: { name: 'CIPHER SIG', email: 'ciphersig@gmail.com' },
+    to: [{ email: toEmail, name: toName || toEmail }],
+    subject: subject,
+    htmlContent: htmlContent,
+  };
+
+  if (pdfBase64) {
+    payload.attachment = [
+      {
+        content: pdfBase64,
+        name: pdfFilename || 'Certificate.pdf',
+      },
+    ];
+  }
+
+  try {
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'api-key': BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error('❌ [Brevo] Error sending email:', data);
+      return { success: false, error: data };
+    }
+
+    console.log('✅ [Brevo] Email sent successfully to:', toEmail, data);
+    return { success: true, data };
+  } catch (err: any) {
+    console.error('❌ [Brevo] Exception during dispatch:', err);
+    return { success: false, error: err.message };
+  }
+}
+
+/**
  * 1. REGISTRATION LOGGED / PENDING ADMIN APPROVAL TEMPLATE
- * Sent immediately after a user registers (before admin approves).
  */
 export function buildRegistrationPendingTemplate({
   userName,
@@ -146,7 +212,6 @@ CIPHER Security Ops<br>
 
 /**
  * 2. ACCESS GRANTED / APPROVED TEMPLATE
- * Sent after an administrator approves the registration in admin dashboard.
  */
 export function buildAccessGrantedTemplate({
   userName,
@@ -279,98 +344,75 @@ See you on the inside.<br>
  * Dispatch Pending Registration Email
  */
 export async function sendRegistrationPendingEmail(params: RegistrationEmailParams) {
-  if (!resend) {
-    console.warn('⚠️ [Resend] API key missing or client not initialized. Email sending skipped.');
-    return { success: false, reason: 'missing_api_key' };
-  }
-
   const html = buildRegistrationPendingTemplate(params);
   const subject = `[REGISTRATION LOGGED] Clearance Pending // ${params.eventName}`;
 
-  const recipients = Array.from(
-    new Set([params.userEmail, 'nutracia3@gmail.com'].filter(Boolean))
-  );
+  // 1. Try Brevo API first (100% Free 300/day plan, sends to any recipient)
+  const brevoRes = await sendBrevoEmail({
+    toEmail: params.userEmail,
+    toName: params.userName,
+    subject,
+    htmlContent: html,
+  });
 
-  console.log(`📡 [Resend] Attempting to dispatch pending registration email to:`, recipients);
-
-  try {
-    const { data, error } = await resend.emails.send({
-      from: 'access-control <onboarding@resend.dev>',
-      to: recipients,
-      subject,
-      html,
-    });
-
-    if (error) {
-      console.error('❌ [Resend] Error sending pending email:', error);
-      if ((error as any).message?.includes('can only send to') || (error as any).name === 'validation_error') {
-        const retryResult = await resend.emails.send({
-          from: 'access-control <onboarding@resend.dev>',
-          to: ['nutracia3@gmail.com'],
-          subject,
-          html,
-        });
-        return { success: !retryResult.error, data: retryResult.data, error: retryResult.error };
-      }
-      return { success: false, error };
-    }
-
-    console.log('✅ [Resend] Pending registration email sent successfully:', data);
-    return { success: true, data };
-  } catch (err: any) {
-    console.error('❌ [Resend] Unexpected exception during pending email dispatch:', err);
-    return { success: false, error: err.message };
+  if (brevoRes.success) {
+    return brevoRes;
   }
+
+  // 2. Fallback to Resend if Brevo is unavailable
+  if (resend) {
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'access-control <onboarding@resend.dev>',
+        to: [params.userEmail],
+        subject,
+        html,
+      });
+      return { success: !error, data, error };
+    } catch (err: any) {
+      return { success: false, error: err.message };
+    }
+  }
+
+  return brevoRes;
 }
 
 /**
  * Dispatch Access Granted / Approved Email
  */
 export async function sendAccessGrantedEmail(params: RegistrationEmailParams) {
-  if (!resend) {
-    console.warn('⚠️ [Resend] API key missing or client not initialized. Email sending skipped.');
-    return { success: false, reason: 'missing_api_key' };
-  }
-
   const html = buildAccessGrantedTemplate(params);
   const subject = `[ACCESS GRANTED] Clearance Confirmed // ${params.eventName}`;
 
-  const recipients = Array.from(
-    new Set([params.userEmail, 'nutracia3@gmail.com'].filter(Boolean))
-  );
+  // 1. Try Brevo API first (100% Free 300/day plan, sends to any recipient)
+  const brevoRes = await sendBrevoEmail({
+    toEmail: params.userEmail,
+    toName: params.userName,
+    subject,
+    htmlContent: html,
+  });
 
-  console.log(`📡 [Resend] Attempting to dispatch access granted email to:`, recipients);
-
-  try {
-    const { data, error } = await resend.emails.send({
-      from: 'access-control <onboarding@resend.dev>',
-      to: recipients,
-      subject,
-      html,
-    });
-
-    if (error) {
-      console.error('❌ [Resend] Error sending access granted email:', error);
-      if ((error as any).message?.includes('can only send to') || (error as any).name === 'validation_error') {
-        const retryResult = await resend.emails.send({
-          from: 'access-control <onboarding@resend.dev>',
-          to: ['nutracia3@gmail.com'],
-          subject,
-          html,
-        });
-        return { success: !retryResult.error, data: retryResult.data, error: retryResult.error };
-      }
-      return { success: false, error };
-    }
-
-    console.log('✅ [Resend] Access granted email sent successfully:', data);
-    return { success: true, data };
-  } catch (err: any) {
-    console.error('❌ [Resend] Unexpected exception during access granted email dispatch:', err);
-    return { success: false, error: err.message };
+  if (brevoRes.success) {
+    return brevoRes;
   }
+
+  // 2. Fallback to Resend if Brevo is unavailable
+  if (resend) {
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'access-control <onboarding@resend.dev>',
+        to: [params.userEmail],
+        subject,
+        html,
+      });
+      return { success: !error, data, error };
+    } catch (err: any) {
+      return { success: false, error: err.message };
+    }
+  }
+
+  return brevoRes;
 }
 
 // Backward compatibility alias
 export const sendRegistrationConfirmationEmail = sendRegistrationPendingEmail;
-

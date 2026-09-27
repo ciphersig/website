@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import QRCode from 'qrcode';
-import { supabase } from '@/app/utils/supabase';
-import { buildAccessGrantedTemplate, buildRegistrationPendingTemplate } from '@/app/utils/emailService';
+import { sendBrevoEmail, buildAccessGrantedTemplate, buildRegistrationPendingTemplate } from '@/app/utils/emailService';
 
-// Create a Resend instance. Ensure RESEND_API_KEY is in your .env.local
-const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
+export const dynamic = 'force-dynamic';
+
+const resendApiKey = process.env.RESEND_API_KEY || '';
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function POST(request: Request) {
   try {
@@ -14,12 +15,6 @@ export async function POST(request: Request) {
     if (!regId) {
       return NextResponse.json({ error: 'Missing regId' }, { status: 400 });
     }
-
-    // Generate QR Code Data URI
-    const qrDataUrl = await QRCode.toDataURL(regId, {
-      color: { dark: '#000000', light: '#ffffff' },
-      width: 300
-    });
 
     let toEmail = studentEmail || 'student@example.com';
     let toName = studentName || 'Student';
@@ -63,43 +58,45 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.warn('⚠️ RESEND_API_KEY is not set. Email would have been sent: ', subject);
-      return NextResponse.json({ success: true, warning: 'API key missing, mock success' });
-    }
-
-    const recipients = Array.from(new Set([toEmail, 'nutracia3@gmail.com'].filter(Boolean)));
-
-    const emailPayload: any = {
-      from: 'access-control <onboarding@resend.dev>',
-      to: recipients,
+    // 1. Try Brevo (Free plan, 300 emails/day, no recipient restriction)
+    const brevoResult = await sendBrevoEmail({
+      toEmail,
+      toName,
       subject,
-      html: htmlContent,
-    };
+      htmlContent,
+      pdfBase64: pdfBase64 || undefined,
+      pdfFilename: `${toName.replace(/\s+/g, '_')}_Certificate.pdf`,
+    });
 
-    if (pdfBase64) {
-      emailPayload.attachments = [
-        {
-          filename: `${toName.replace(/\s+/g, '_')}_Certificate.pdf`,
-          content: pdfBase64,
-        }
-      ];
+    if (brevoResult.success) {
+      return NextResponse.json({ success: true, data: brevoResult.data });
     }
 
-    let { data, error } = await resend.emails.send(emailPayload);
+    // 2. Fallback to Resend if configured
+    if (resend) {
+      const emailPayload: any = {
+        from: 'access-control <onboarding@resend.dev>',
+        to: [toEmail],
+        subject,
+        html: htmlContent,
+      };
 
-    if (error && ((error as any).message?.includes('can only send to') || (error as any).name === 'validation_error')) {
-      emailPayload.to = ['nutracia3@gmail.com'];
-      const retry = await resend.emails.send(emailPayload);
-      data = retry.data;
-      error = retry.error;
+      if (pdfBase64) {
+        emailPayload.attachments = [
+          {
+            filename: `${toName.replace(/\s+/g, '_')}_Certificate.pdf`,
+            content: pdfBase64,
+          },
+        ];
+      }
+
+      const { data, error } = await resend.emails.send(emailPayload);
+      if (!error) {
+        return NextResponse.json({ success: true, data });
+      }
     }
 
-    if (error) {
-      return NextResponse.json({ error }, { status: 400 });
-    }
-
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: brevoResult.success, error: brevoResult.error });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
