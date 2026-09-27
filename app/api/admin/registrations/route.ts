@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       .order('created_at', { ascending: false });
 
     if (regError) throw regError;
-    
+
     if (!regData || regData.length === 0) {
       return NextResponse.json({ data: [] });
     }

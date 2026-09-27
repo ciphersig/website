@@ -132,10 +132,22 @@ function DesktopPage() {
     }
   }, [skipIntro, navActions]);
 
-  // Handle opening complete - show hero UI
+  // Check if visitor has visited before (for preloader skip button logic)
+  const [isReturningVisitor, setIsReturningVisitor] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const visited = localStorage.getItem('cipher_has_visited') === 'true';
+      setIsReturningVisitor(visited);
+    }
+  }, []);
+
+  // Handle opening complete - show hero UI & mark as visited
   const handleOpeningComplete = () => {
     handleOpeningCompleteRaw();
     navActions.setHeroVisible(true);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cipher_has_visited', 'true');
+    }
   };
 
   // Handle direct skip from preloader to main hero landing
@@ -233,7 +245,7 @@ function DesktopPage() {
           progress={loadingProgress}
           isVisible={loadingScreenVisible}
           onLoopEndAfterComplete={() => setLoaderLoopDone(true)}
-          onSkip={handleSkipPreloader}
+          onSkip={isReturningVisitor ? handleSkipPreloader : undefined}
         />
       )}
 

@@ -58,9 +58,9 @@ export async function POST(request: Request) {
       .select('id')
       .eq('student_id', studentId)
       .eq('event_id', eventId);
-      
+
     if (regSearchError) throw regSearchError;
-    
+
     if (existingReg && existingReg.length > 0) {
       return NextResponse.json({ error: 'You are already registered for this event.' }, { status: 400 });
     }

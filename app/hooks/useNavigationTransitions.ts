@@ -157,42 +157,67 @@ export function useNavigationTransitions(
           watchdogTimer = null;
         }
 
-        if (transVideo) {
-          transVideo.pause();
-          transVideo.removeEventListener('ended', handleEnded);
-          transVideo.removeEventListener('error', handleError);
-        }
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            homeLogger.info('[Transition] ✅ Video transition ended → advancing to target section', {
-              to: targetSection,
-              reason,
-            });
-
-            actions.setCurrentSection(targetSection);
-            actions.setIsTransitioning(false);
-            refs.isTransitioningRef.current = false;
-
-            // Show UI when entering hero or aboutStart
-            if (targetSection === 'hero') {
-              actions.setHeroVisible(true);
-            }
-            if (targetSection === 'aboutStart') {
-              actions.setAboutStartVisible(true);
-            }
-
-            // Start target video playback if present
-            if (targetVideo) {
-              videoPlaybackManager.play(targetVideoRef).catch((err) => {
-                homeLogger.warn('[Transition] ⚠️ Target video play() error after transition', {
-                  to: targetSection,
-                  error: (err as Error).message,
-                });
-              });
-            }
+        const performHandoff = () => {
+          homeLogger.info('[Transition] ✅ Video transition ended → advancing to target section', {
+            to: targetSection,
+            reason,
           });
-        });
+
+          if (transVideo) {
+            transVideo.pause();
+            transVideo.removeEventListener('ended', handleEnded);
+            transVideo.removeEventListener('error', handleError);
+          }
+
+          actions.setCurrentSection(targetSection);
+          actions.setIsTransitioning(false);
+          refs.isTransitioningRef.current = false;
+
+          // Show UI when entering hero or aboutStart
+          if (targetSection === 'hero') {
+            actions.setHeroVisible(true);
+          }
+          if (targetSection === 'aboutStart') {
+            actions.setAboutStartVisible(true);
+          }
+        };
+
+        if (targetVideo) {
+          let targetFrameRendered = false;
+          const onTargetReady = () => {
+            if (targetFrameRendered) return;
+            targetFrameRendered = true;
+            targetVideo.removeEventListener('playing', onTargetReady);
+            targetVideo.removeEventListener('timeupdate', onTargetReady);
+            requestAnimationFrame(() => {
+              performHandoff();
+            });
+          };
+
+          targetVideo.addEventListener('playing', onTargetReady, { once: true });
+          targetVideo.addEventListener('timeupdate', onTargetReady, { once: true });
+
+          videoPlaybackManager.play(targetVideoRef).then(() => {
+            if (targetVideo.readyState >= 3 && !targetVideo.paused) {
+              onTargetReady();
+            }
+          }).catch((err) => {
+            homeLogger.warn('[Transition] ⚠️ Target video play() error after transition', {
+              to: targetSection,
+              error: (err as Error).message,
+            });
+            performHandoff();
+          });
+
+          // Safety fallback timeout (120ms max)
+          setTimeout(() => {
+            if (!targetFrameRendered) {
+              onTargetReady();
+            }
+          }, 120);
+        } else {
+          performHandoff();
+        }
       };
 
       const handleEnded = () => {

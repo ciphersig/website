@@ -49,8 +49,8 @@ export async function POST(request: Request) {
 
     const feedbacks = feedbackData || [];
     const numFeedbacks = feedbacks.length;
-    const avgRating = numFeedbacks > 0 
-      ? feedbacks.reduce((acc, curr) => acc + curr.rating, 0) / numFeedbacks 
+    const avgRating = numFeedbacks > 0
+      ? feedbacks.reduce((acc, curr) => acc + curr.rating, 0) / numFeedbacks
       : 0;
 
     // 4. Construct Prompt
@@ -99,8 +99,8 @@ Based on the above data, write a brief, professional summary report assessing th
     const aiData = await response.json();
     const reportContent = aiData.choices[0].message.content;
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       report: reportContent,
       stats: {
         title: eventData.title,
