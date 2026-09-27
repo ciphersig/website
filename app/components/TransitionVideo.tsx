@@ -92,11 +92,11 @@ export function TransitionVideo({
 
   return (
     <section
-      className={`fixed inset-0 z-50 w-full h-screen overflow-hidden ${shouldShow
-        ? 'opacity-100 pointer-events-auto visible'
-        : 'opacity-0 pointer-events-none invisible'
-        }`}
-      style={{ transition: 'opacity 0s' }}
+      className={`fixed inset-0 z-50 w-full h-screen overflow-hidden bg-black transition-opacity duration-150 ease-out ${
+        shouldShow
+          ? 'opacity-100 pointer-events-auto visible'
+          : 'opacity-0 pointer-events-none invisible'
+      }`}
     >
       <VideoBackground videoRef={videoRef} src={activeSrc} loop={false} />
     </section>

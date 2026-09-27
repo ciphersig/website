@@ -3,6 +3,8 @@ import { LOADING_TIMEOUT } from '../constants/config';
 import { videoLogger } from '../utils/logger';
 import { VIDEO_PATHS } from '../constants/config';
 import { videoPlaybackManager } from '../utils/VideoPlaybackManager';
+import { assetUrl } from '../utils/assetUrl';
+import { preloadAsBlobUrl } from '../utils/blobCache';
 
 export function useVideoPreloader(videoPaths: string[]) {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,9 +57,11 @@ export function useVideoPreloader(videoPaths: string[]) {
     );
 
     const loadOneVideo = async (path: string) => {
-      const result = await videoPlaybackManager.preloadVideo(path, {
-        timeout: PER_VIDEO_TIMEOUT_MS,
-      });
+      const fullUrl = assetUrl(path);
+      const [result] = await Promise.all([
+        videoPlaybackManager.preloadVideo(path, { timeout: PER_VIDEO_TIMEOUT_MS }),
+        preloadAsBlobUrl(fullUrl).catch(() => fullUrl),
+      ]);
 
       if (!isCancelled) {
         loadedCount += 1;

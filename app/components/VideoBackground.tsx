@@ -1,4 +1,6 @@
 import { RefObject } from 'react';
+import { assetUrl } from '../utils/assetUrl';
+import { getBlobUrl } from '../utils/blobCache';
 
 interface VideoBackgroundProps {
   videoRef: RefObject<HTMLVideoElement | null>;
@@ -19,10 +21,12 @@ export function VideoBackground({
   preload = 'auto',
   className = '',
 }: VideoBackgroundProps) {
+  const resolvedSrc = src ? getBlobUrl(assetUrl(src)) : undefined;
+
   return (
     <video
       ref={videoRef}
-      src={src || undefined}
+      src={resolvedSrc}
       autoPlay={autoPlay}
       loop={loop}
       muted={muted}
