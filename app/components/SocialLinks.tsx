@@ -129,7 +129,7 @@ const SocialLinksComponent = ({
         />
       </a>
       <a 
-        href="https://www.linkedin.com/company/wadia-coe-cipher-sig/home/" 
+        href="https://www.linkedin.com/in/cipher-sig-238a3843a" 
         target="_blank" 
         rel="noopener noreferrer"
         className="text-white hover:opacity-70 transition-opacity"

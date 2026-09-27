@@ -19,7 +19,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "CIPHER — Every Frame Is a Painting | Creative Production Studio",
+  title: "CIPHER SIG | BY ANSH AND KUNAL",
   description: "CIPHER is a multidisciplinary creative production studio based in Yerevan, Armenia. We specialize in VFX, CGI, animation, commercial production, and sound design — merging high art with high tech.",
   keywords: [
     "CIPHER", "creative production studio", "VFX", "CGI", "animation", "commercial video production",
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://cipher.com",
     siteName: "CIPHER",
-    title: "CIPHER — Every Frame Is a Painting",
+    title: "CIPHER SIG | BY ANSH AND KUNAL",
     description: "A multidisciplinary creative production studio. VFX, CGI, animation, commercial production & sound design. Yerevan, Armenia.",
     images: [{ url: `${BASE_PATH}/loading-bg.jpg`, width: 1920, height: 1080, alt: "CIPHER Showreel" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CIPHER — Every Frame Is a Painting",
+    title: "CIPHER SIG | BY ANSH AND KUNAL",
     description: "A multidisciplinary creative production studio. VFX, CGI, animation, commercial production & sound design.",
     images: [`${BASE_PATH}/loading-bg.jpg`],
   },
@@ -79,7 +79,7 @@ export default function RootLayout({
             "url": "https://cipher.com",
             "logo": "https://cipher.com/favicon.png",
             "foundingDate": "2022",
-            "slogan": "Every frame is a painting.",
+            "slogan": "CIPHER SIG | BY ANSH AND KUNAL",
             "address": { "@type": "PostalAddress", "addressLocality": "Yerevan", "addressCountry": "AM" },
             "contactPoint": [
               { "@type": "ContactPoint", "telephone": "+1-424-3030572", "contactType": "customer service", "areaServed": "US" },
@@ -88,7 +88,7 @@ export default function RootLayout({
             ],
             "sameAs": [
               "https://www.instagram.com/cipher_meswcoe26?utm_source=qr&igsi=MzA2aXlseHhyY3Vj",
-              "https://www.linkedin.com/company/wadia-coe-cipher-sig/home/"
+              "https://www.linkedin.com/in/cipher-sig-238a3843a"
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
