@@ -1,0 +1,687 @@
+{
+  "videos": {
+    "/videos/CasestoContact.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450632/cipherwebsite/videos/CasestoContact.mp4",
+      "publicId": "cipherwebsite/videos/CasestoContact",
+      "duration": 0.941651,
+      "format": "mp4",
+      "bytes": 2355356
+    },
+    "/videos/CasestoContact_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450635/cipherwebsite/videos/CasestoContact_reverse.mp4",
+      "publicId": "cipherwebsite/videos/CasestoContact_reverse",
+      "duration": 0.941651,
+      "format": "mp4",
+      "bytes": 1042373
+    },
+    "/videos/Contact_loop.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450644/cipherwebsite/videos/Contact_loop.mp4",
+      "publicId": "cipherwebsite/videos/Contact_loop",
+      "duration": 5.033333,
+      "format": "mp4",
+      "bytes": 4006417
+    },
+    "/videos/Homepage_aboutstart.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450648/cipherwebsite/videos/Homepage_aboutstart.webm",
+      "publicId": "cipherwebsite/videos/Homepage_aboutstart",
+      "duration": 1.066,
+      "format": "webm",
+      "bytes": 1076695
+    },
+    "/videos/Homepage_aboutstart_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450664/cipherwebsite/videos/Homepage_aboutstart_reverse.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_aboutstart_reverse",
+      "duration": 1.1,
+      "format": "mp4",
+      "bytes": 7449213
+    },
+    "/videos/Homepage_cases.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450680/cipherwebsite/videos/Homepage_cases.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_cases",
+      "duration": 3.041667,
+      "format": "mp4",
+      "bytes": 6064731
+    },
+    "/videos/Homepage_cases_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450687/cipherwebsite/videos/Homepage_cases_reverse.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_cases_reverse",
+      "duration": 3.041667,
+      "format": "mp4",
+      "bytes": 3622166
+    },
+    "/videos/Homepage_contact.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450689/cipherwebsite/videos/Homepage_contact.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_contact",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 559047
+    },
+    "/videos/Homepage_contact_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450136/cipherwebsite/videos/Homepage_contact_reverse.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_contact_reverse",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 404947
+    },
+    "/videos/Homepage_loop.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450707/cipherwebsite/videos/Homepage_loop.webm",
+      "publicId": "cipherwebsite/videos/Homepage_loop",
+      "duration": 9,
+      "format": "webm",
+      "bytes": 11226698
+    },
+    "/videos/Homepage_showreel.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450711/cipherwebsite/videos/Homepage_showreel.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_showreel",
+      "duration": 2.041667,
+      "format": "mp4",
+      "bytes": 820903
+    },
+    "/videos/Homepage_showreel_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450713/cipherwebsite/videos/Homepage_showreel_reverse.mp4",
+      "publicId": "cipherwebsite/videos/Homepage_showreel_reverse",
+      "duration": 2.041667,
+      "format": "mp4",
+      "bytes": 571684
+    },
+    "/videos/aboutstart_loop.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450737/cipherwebsite/videos/aboutstart_loop.mp4",
+      "publicId": "cipherwebsite/videos/aboutstart_loop",
+      "duration": 10.005333,
+      "format": "mp4",
+      "bytes": 15664515
+    },
+    "/videos/aboutstarttoabout.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450740/cipherwebsite/videos/aboutstarttoabout.mp4",
+      "publicId": "cipherwebsite/videos/aboutstarttoabout",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 497672
+    },
+    "/videos/aboutstarttoabout_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450741/cipherwebsite/videos/aboutstarttoabout_reverse.mp4",
+      "publicId": "cipherwebsite/videos/aboutstarttoabout_reverse",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 504584
+    },
+    "/videos/abouttoteam.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450744/cipherwebsite/videos/abouttoteam.mp4",
+      "publicId": "cipherwebsite/videos/abouttoteam",
+      "duration": 0.783008,
+      "format": "mp4",
+      "bytes": 2528698
+    },
+    "/videos/abouttoteam_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450747/cipherwebsite/videos/abouttoteam_reverse.mp4",
+      "publicId": "cipherwebsite/videos/abouttoteam_reverse",
+      "duration": 0.783008,
+      "format": "mp4",
+      "bytes": 2452971
+    },
+    "/videos/eventsbackgoound.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450754/cipherwebsite/videos/eventsbackgoound.mp4",
+      "publicId": "cipherwebsite/videos/eventsbackgoound",
+      "duration": 4.949333,
+      "format": "mp4",
+      "bytes": 3868984
+    },
+    "/videos/eventsbackgooundloop.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450760/cipherwebsite/videos/eventsbackgooundloop.mp4",
+      "publicId": "cipherwebsite/videos/eventsbackgooundloop",
+      "duration": 4.949333,
+      "format": "mp4",
+      "bytes": 3868984
+    },
+    "/videos/loading_showreel.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450859/cipherwebsite/videos/loading_showreel.mp4",
+      "publicId": "cipherwebsite/videos/loading_showreel",
+      "duration": 36.433333,
+      "format": "mp4",
+      "bytes": 61390859
+    },
+    "/videos/loading_to_homepage.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450865/cipherwebsite/videos/loading_to_homepage.mp4",
+      "publicId": "cipherwebsite/videos/loading_to_homepage",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 477714
+    },
+    "/videos/offertopartner.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450868/cipherwebsite/videos/offertopartner.mp4",
+      "publicId": "cipherwebsite/videos/offertopartner",
+      "duration": 1.045,
+      "format": "mp4",
+      "bytes": 926607
+    },
+    "/videos/offertopartner_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450870/cipherwebsite/videos/offertopartner_reverse.mp4",
+      "publicId": "cipherwebsite/videos/offertopartner_reverse",
+      "duration": 1.045,
+      "format": "mp4",
+      "bytes": 920769
+    },
+    "/videos/partnertoCases.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450878/cipherwebsite/videos/partnertoCases.mp4",
+      "publicId": "cipherwebsite/videos/partnertoCases",
+      "duration": 1.6,
+      "format": "mp4",
+      "bytes": 1959807
+    },
+    "/videos/partnertoCases_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450885/cipherwebsite/videos/partnertoCases_reverse.mp4",
+      "publicId": "cipherwebsite/videos/partnertoCases_reverse",
+      "duration": 1.6,
+      "format": "mp4",
+      "bytes": 1940048
+    },
+    "/videos/teamtooffer.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450887/cipherwebsite/videos/teamtooffer.mp4",
+      "publicId": "cipherwebsite/videos/teamtooffer",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 1450559
+    },
+    "/videos/teamtooffer_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450889/cipherwebsite/videos/teamtooffer_reverse.mp4",
+      "publicId": "cipherwebsite/videos/teamtooffer_reverse",
+      "duration": 1.041667,
+      "format": "mp4",
+      "bytes": 1454581
+    },
+    "/videos/teamtoteam.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450891/cipherwebsite/videos/teamtoteam.mp4",
+      "publicId": "cipherwebsite/videos/teamtoteam",
+      "duration": 0.783333,
+      "format": "mp4",
+      "bytes": 2403008
+    },
+    "/videos/teamtoteam_reverse.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450894/cipherwebsite/videos/teamtoteam_reverse.mp4",
+      "publicId": "cipherwebsite/videos/teamtoteam_reverse",
+      "duration": 0.783008,
+      "format": "mp4",
+      "bytes": 2244362
+    },
+    "/videos/ticket.mp4": {
+      "url": "https://res.cloudinary.com/ititit3w/video/upload/v1790450899/cipherwebsite/videos/ticket.mp4",
+      "publicId": "cipherwebsite/videos/ticket",
+      "duration": 2.949002,
+      "format": "mp4",
+      "bytes": 4337512
+    }
+  },
+  "optimizedImages": {
+    "/optimized/about--1280.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450901/cipherwebsite/optimized/about--1280.avif",
+      "publicId": "cipherwebsite/optimized/about--1280",
+      "format": "avif",
+      "bytes": 80412
+    },
+    "/optimized/about--1280.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450902/cipherwebsite/optimized/about--1280.webp",
+      "publicId": "cipherwebsite/optimized/about--1280",
+      "format": "webp",
+      "bytes": 114204
+    },
+    "/optimized/about--1600.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450903/cipherwebsite/optimized/about--1600.avif",
+      "publicId": "cipherwebsite/optimized/about--1600",
+      "format": "avif",
+      "bytes": 97840
+    },
+    "/optimized/about--1600.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450904/cipherwebsite/optimized/about--1600.webp",
+      "publicId": "cipherwebsite/optimized/about--1600",
+      "format": "webp",
+      "bytes": 148054
+    },
+    "/optimized/about--1920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450905/cipherwebsite/optimized/about--1920.avif",
+      "publicId": "cipherwebsite/optimized/about--1920",
+      "format": "avif",
+      "bytes": 116641
+    },
+    "/optimized/about--1920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450906/cipherwebsite/optimized/about--1920.webp",
+      "publicId": "cipherwebsite/optimized/about--1920",
+      "format": "webp",
+      "bytes": 178346
+    },
+    "/optimized/about--2560.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450907/cipherwebsite/optimized/about--2560.avif",
+      "publicId": "cipherwebsite/optimized/about--2560",
+      "format": "avif",
+      "bytes": 154177
+    },
+    "/optimized/about--2560.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450908/cipherwebsite/optimized/about--2560.webp",
+      "publicId": "cipherwebsite/optimized/about--2560",
+      "format": "webp",
+      "bytes": 246294
+    },
+    "/optimized/about--2920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450909/cipherwebsite/optimized/about--2920.avif",
+      "publicId": "cipherwebsite/optimized/about--2920",
+      "format": "avif",
+      "bytes": 260850
+    },
+    "/optimized/about--2920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450911/cipherwebsite/optimized/about--2920.webp",
+      "publicId": "cipherwebsite/optimized/about--2920",
+      "format": "webp",
+      "bytes": 420604
+    },
+    "/optimized/about--640.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450912/cipherwebsite/optimized/about--640.avif",
+      "publicId": "cipherwebsite/optimized/about--640",
+      "format": "avif",
+      "bytes": 36064
+    },
+    "/optimized/about--640.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450913/cipherwebsite/optimized/about--640.webp",
+      "publicId": "cipherwebsite/optimized/about--640",
+      "format": "webp",
+      "bytes": 46666
+    },
+    "/optimized/about--960.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450914/cipherwebsite/optimized/about--960.avif",
+      "publicId": "cipherwebsite/optimized/about--960",
+      "format": "avif",
+      "bytes": 60238
+    },
+    "/optimized/about--960.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450914/cipherwebsite/optimized/about--960.webp",
+      "publicId": "cipherwebsite/optimized/about--960",
+      "format": "webp",
+      "bytes": 81642
+    },
+    "/optimized/offer--1280.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450915/cipherwebsite/optimized/offer--1280.avif",
+      "publicId": "cipherwebsite/optimized/offer--1280",
+      "format": "avif",
+      "bytes": 103719
+    },
+    "/optimized/offer--1280.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450916/cipherwebsite/optimized/offer--1280.webp",
+      "publicId": "cipherwebsite/optimized/offer--1280",
+      "format": "webp",
+      "bytes": 136752
+    },
+    "/optimized/offer--1600.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450917/cipherwebsite/optimized/offer--1600.avif",
+      "publicId": "cipherwebsite/optimized/offer--1600",
+      "format": "avif",
+      "bytes": 138912
+    },
+    "/optimized/offer--1600.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450919/cipherwebsite/optimized/offer--1600.webp",
+      "publicId": "cipherwebsite/optimized/offer--1600",
+      "format": "webp",
+      "bytes": 190546
+    },
+    "/optimized/offer--1920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450920/cipherwebsite/optimized/offer--1920.avif",
+      "publicId": "cipherwebsite/optimized/offer--1920",
+      "format": "avif",
+      "bytes": 168317
+    },
+    "/optimized/offer--1920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450921/cipherwebsite/optimized/offer--1920.webp",
+      "publicId": "cipherwebsite/optimized/offer--1920",
+      "format": "webp",
+      "bytes": 235762
+    },
+    "/optimized/offer--2560.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450922/cipherwebsite/optimized/offer--2560.avif",
+      "publicId": "cipherwebsite/optimized/offer--2560",
+      "format": "avif",
+      "bytes": 227446
+    },
+    "/optimized/offer--2560.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450923/cipherwebsite/optimized/offer--2560.webp",
+      "publicId": "cipherwebsite/optimized/offer--2560",
+      "format": "webp",
+      "bytes": 319304
+    },
+    "/optimized/offer--2920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450924/cipherwebsite/optimized/offer--2920.avif",
+      "publicId": "cipherwebsite/optimized/offer--2920",
+      "format": "avif",
+      "bytes": 233080
+    },
+    "/optimized/offer--2920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450925/cipherwebsite/optimized/offer--2920.webp",
+      "publicId": "cipherwebsite/optimized/offer--2920",
+      "format": "webp",
+      "bytes": 360362
+    },
+    "/optimized/offer--640.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450926/cipherwebsite/optimized/offer--640.avif",
+      "publicId": "cipherwebsite/optimized/offer--640",
+      "format": "avif",
+      "bytes": 35458
+    },
+    "/optimized/offer--640.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450928/cipherwebsite/optimized/offer--640.webp",
+      "publicId": "cipherwebsite/optimized/offer--640",
+      "format": "webp",
+      "bytes": 44216
+    },
+    "/optimized/offer--960.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450928/cipherwebsite/optimized/offer--960.avif",
+      "publicId": "cipherwebsite/optimized/offer--960",
+      "format": "avif",
+      "bytes": 69482
+    },
+    "/optimized/offer--960.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450929/cipherwebsite/optimized/offer--960.webp",
+      "publicId": "cipherwebsite/optimized/offer--960",
+      "format": "webp",
+      "bytes": 89310
+    },
+    "/optimized/partners--1280.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450931/cipherwebsite/optimized/partners--1280.avif",
+      "publicId": "cipherwebsite/optimized/partners--1280",
+      "format": "avif",
+      "bytes": 104946
+    },
+    "/optimized/partners--1280.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450932/cipherwebsite/optimized/partners--1280.webp",
+      "publicId": "cipherwebsite/optimized/partners--1280",
+      "format": "webp",
+      "bytes": 151802
+    },
+    "/optimized/partners--1600.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450932/cipherwebsite/optimized/partners--1600.avif",
+      "publicId": "cipherwebsite/optimized/partners--1600",
+      "format": "avif",
+      "bytes": 138391
+    },
+    "/optimized/partners--1600.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450934/cipherwebsite/optimized/partners--1600.webp",
+      "publicId": "cipherwebsite/optimized/partners--1600",
+      "format": "webp",
+      "bytes": 204450
+    },
+    "/optimized/partners--1920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450935/cipherwebsite/optimized/partners--1920.avif",
+      "publicId": "cipherwebsite/optimized/partners--1920",
+      "format": "avif",
+      "bytes": 174552
+    },
+    "/optimized/partners--1920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450936/cipherwebsite/optimized/partners--1920.webp",
+      "publicId": "cipherwebsite/optimized/partners--1920",
+      "format": "webp",
+      "bytes": 261814
+    },
+    "/optimized/partners--2560.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450937/cipherwebsite/optimized/partners--2560.avif",
+      "publicId": "cipherwebsite/optimized/partners--2560",
+      "format": "avif",
+      "bytes": 243016
+    },
+    "/optimized/partners--2560.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450938/cipherwebsite/optimized/partners--2560.webp",
+      "publicId": "cipherwebsite/optimized/partners--2560",
+      "format": "webp",
+      "bytes": 369080
+    },
+    "/optimized/partners--2920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450939/cipherwebsite/optimized/partners--2920.avif",
+      "publicId": "cipherwebsite/optimized/partners--2920",
+      "format": "avif",
+      "bytes": 279500
+    },
+    "/optimized/partners--2920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450941/cipherwebsite/optimized/partners--2920.webp",
+      "publicId": "cipherwebsite/optimized/partners--2920",
+      "format": "webp",
+      "bytes": 446096
+    },
+    "/optimized/partners--640.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450942/cipherwebsite/optimized/partners--640.avif",
+      "publicId": "cipherwebsite/optimized/partners--640",
+      "format": "avif",
+      "bytes": 33718
+    },
+    "/optimized/partners--640.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450943/cipherwebsite/optimized/partners--640.webp",
+      "publicId": "cipherwebsite/optimized/partners--640",
+      "format": "webp",
+      "bytes": 44130
+    },
+    "/optimized/partners--960.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450944/cipherwebsite/optimized/partners--960.avif",
+      "publicId": "cipherwebsite/optimized/partners--960",
+      "format": "avif",
+      "bytes": 69126
+    },
+    "/optimized/partners--960.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450945/cipherwebsite/optimized/partners--960.webp",
+      "publicId": "cipherwebsite/optimized/partners--960",
+      "format": "webp",
+      "bytes": 94688
+    },
+    "/optimized/team1--1280.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450946/cipherwebsite/optimized/team1--1280.avif",
+      "publicId": "cipherwebsite/optimized/team1--1280",
+      "format": "avif",
+      "bytes": 32764
+    },
+    "/optimized/team1--1280.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450947/cipherwebsite/optimized/team1--1280.webp",
+      "publicId": "cipherwebsite/optimized/team1--1280",
+      "format": "webp",
+      "bytes": 48564
+    },
+    "/optimized/team1--1600.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450948/cipherwebsite/optimized/team1--1600.avif",
+      "publicId": "cipherwebsite/optimized/team1--1600",
+      "format": "avif",
+      "bytes": 40691
+    },
+    "/optimized/team1--1600.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450948/cipherwebsite/optimized/team1--1600.webp",
+      "publicId": "cipherwebsite/optimized/team1--1600",
+      "format": "webp",
+      "bytes": 63238
+    },
+    "/optimized/team1--1920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450949/cipherwebsite/optimized/team1--1920.avif",
+      "publicId": "cipherwebsite/optimized/team1--1920",
+      "format": "avif",
+      "bytes": 47839
+    },
+    "/optimized/team1--1920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450950/cipherwebsite/optimized/team1--1920.webp",
+      "publicId": "cipherwebsite/optimized/team1--1920",
+      "format": "webp",
+      "bytes": 77898
+    },
+    "/optimized/team1--2560.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450951/cipherwebsite/optimized/team1--2560.avif",
+      "publicId": "cipherwebsite/optimized/team1--2560",
+      "format": "avif",
+      "bytes": 61667
+    },
+    "/optimized/team1--2560.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450952/cipherwebsite/optimized/team1--2560.webp",
+      "publicId": "cipherwebsite/optimized/team1--2560",
+      "format": "webp",
+      "bytes": 104744
+    },
+    "/optimized/team1--2920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450953/cipherwebsite/optimized/team1--2920.avif",
+      "publicId": "cipherwebsite/optimized/team1--2920",
+      "format": "avif",
+      "bytes": 133025
+    },
+    "/optimized/team1--2920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450955/cipherwebsite/optimized/team1--2920.webp",
+      "publicId": "cipherwebsite/optimized/team1--2920",
+      "format": "webp",
+      "bytes": 240574
+    },
+    "/optimized/team1--640.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450956/cipherwebsite/optimized/team1--640.avif",
+      "publicId": "cipherwebsite/optimized/team1--640",
+      "format": "avif",
+      "bytes": 14686
+    },
+    "/optimized/team1--640.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450957/cipherwebsite/optimized/team1--640.webp",
+      "publicId": "cipherwebsite/optimized/team1--640",
+      "format": "webp",
+      "bytes": 19150
+    },
+    "/optimized/team1--960.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450958/cipherwebsite/optimized/team1--960.avif",
+      "publicId": "cipherwebsite/optimized/team1--960",
+      "format": "avif",
+      "bytes": 24697
+    },
+    "/optimized/team1--960.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450959/cipherwebsite/optimized/team1--960.webp",
+      "publicId": "cipherwebsite/optimized/team1--960",
+      "format": "webp",
+      "bytes": 34946
+    },
+    "/optimized/team2--1280.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450960/cipherwebsite/optimized/team2--1280.avif",
+      "publicId": "cipherwebsite/optimized/team2--1280",
+      "format": "avif",
+      "bytes": 34007
+    },
+    "/optimized/team2--1280.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450961/cipherwebsite/optimized/team2--1280.webp",
+      "publicId": "cipherwebsite/optimized/team2--1280",
+      "format": "webp",
+      "bytes": 50058
+    },
+    "/optimized/team2--1600.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450962/cipherwebsite/optimized/team2--1600.avif",
+      "publicId": "cipherwebsite/optimized/team2--1600",
+      "format": "avif",
+      "bytes": 43032
+    },
+    "/optimized/team2--1600.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450963/cipherwebsite/optimized/team2--1600.webp",
+      "publicId": "cipherwebsite/optimized/team2--1600",
+      "format": "webp",
+      "bytes": 64670
+    },
+    "/optimized/team2--1920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450964/cipherwebsite/optimized/team2--1920.avif",
+      "publicId": "cipherwebsite/optimized/team2--1920",
+      "format": "avif",
+      "bytes": 51006
+    },
+    "/optimized/team2--1920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450965/cipherwebsite/optimized/team2--1920.webp",
+      "publicId": "cipherwebsite/optimized/team2--1920",
+      "format": "webp",
+      "bytes": 78858
+    },
+    "/optimized/team2--2560.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450966/cipherwebsite/optimized/team2--2560.avif",
+      "publicId": "cipherwebsite/optimized/team2--2560",
+      "format": "avif",
+      "bytes": 65501
+    },
+    "/optimized/team2--2560.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450967/cipherwebsite/optimized/team2--2560.webp",
+      "publicId": "cipherwebsite/optimized/team2--2560",
+      "format": "webp",
+      "bytes": 104682
+    },
+    "/optimized/team2--2920.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450967/cipherwebsite/optimized/team2--2920.avif",
+      "publicId": "cipherwebsite/optimized/team2--2920",
+      "format": "avif",
+      "bytes": 153206
+    },
+    "/optimized/team2--2920.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450969/cipherwebsite/optimized/team2--2920.webp",
+      "publicId": "cipherwebsite/optimized/team2--2920",
+      "format": "webp",
+      "bytes": 247950
+    },
+    "/optimized/team2--640.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450970/cipherwebsite/optimized/team2--640.avif",
+      "publicId": "cipherwebsite/optimized/team2--640",
+      "format": "avif",
+      "bytes": 14253
+    },
+    "/optimized/team2--640.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450971/cipherwebsite/optimized/team2--640.webp",
+      "publicId": "cipherwebsite/optimized/team2--640",
+      "format": "webp",
+      "bytes": 19114
+    },
+    "/optimized/team2--960.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450972/cipherwebsite/optimized/team2--960.avif",
+      "publicId": "cipherwebsite/optimized/team2--960",
+      "format": "avif",
+      "bytes": 25024
+    },
+    "/optimized/team2--960.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450972/cipherwebsite/optimized/team2--960.webp",
+      "publicId": "cipherwebsite/optimized/team2--960",
+      "format": "webp",
+      "bytes": 36232
+    }
+  },
+  "rootImages": {
+    "/loading-bg.avif": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450973/cipherwebsite/images/loading-bg.avif",
+      "publicId": "cipherwebsite/images/loading-bg",
+      "format": "avif",
+      "bytes": 10830
+    },
+    "/loading-bg.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450974/cipherwebsite/images/loading-bg.webp",
+      "publicId": "cipherwebsite/images/loading-bg",
+      "format": "webp",
+      "bytes": 22328
+    },
+    "/loading-bg.jpg": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450975/cipherwebsite/images/loading-bg.jpg",
+      "publicId": "cipherwebsite/images/loading-bg",
+      "format": "jpg",
+      "bytes": 129403
+    },
+    "/noise.webp": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450976/cipherwebsite/images/noise.webp",
+      "publicId": "cipherwebsite/images/noise",
+      "format": "webp",
+      "bytes": 732274
+    },
+    "/Cases_png_transparent.png": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450977/cipherwebsite/images/Cases_png_transparent.png",
+      "publicId": "cipherwebsite/images/Cases_png_transparent",
+      "format": "png",
+      "bytes": 637387
+    },
+    "/Showreel_png_transparent.png": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450978/cipherwebsite/images/Showreel_png_transparent.png",
+      "publicId": "cipherwebsite/images/Showreel_png_transparent",
+      "format": "png",
+      "bytes": 1090932
+    },
+    "/cases-bg.png": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450979/cipherwebsite/images/cases-bg.png",
+      "publicId": "cipherwebsite/images/cases-bg",
+      "format": "png",
+      "bytes": 280346
+    },
+    "/events-video-frame.jpg": {
+      "url": "https://res.cloudinary.com/ititit3w/image/upload/v1790450980/cipherwebsite/images/events-video-frame.jpg",
+      "publicId": "cipherwebsite/images/events-video-frame",
+      "format": "jpg",
+      "bytes": 104463
+    }
+  },
+  "uploadedAt": "2026-09-26T19:23:45.041Z"
+}

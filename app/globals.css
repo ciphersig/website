@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://assets.codepen.io/7558/PPNeueMontreal-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Supply Mono";
+  src: url("https://assets.codepen.io/7558/PPSupplyMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-pp-sans: "PP Neue Montreal", sans-serif;
+  --font-pp-mono: "PP Supply Mono", monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+  --font-pp-sans: var(--font-pp-sans);
+  --font-pp-mono: var(--font-pp-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Prevent autofill from changing input background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Adjust transition delay for autofill */
+input:-webkit-autofill {
+  -webkit-transition-delay: 99999s;
+}
+
+/* Hide scrollbar for all browsers by default */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: hidden;
+  /* Allow pinch-to-zoom on mobile, but disable double-tap zoom for better performance */
+  touch-action: pan-x pan-y;
+}
+
+/* Explicit visible scrollbar for admin panel */
+.admin-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.03) !important;
+}
+
+.admin-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 6px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-radius: 6px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Explicit visible cyber scrollbar for Events Team Roster tab */
+.team-roster-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(239, 68, 68, 0.75) rgba(0, 0, 0, 0.5) !important;
+}
+
+.team-roster-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.team-roster-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(239, 68, 68, 0.15) !important;
+}
+
+.team-roster-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(239, 68, 68, 0.75) !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.team-roster-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 68, 68, 1) !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.7) !important;
+}
+
+
+

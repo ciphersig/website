@@ -1,0 +1,140 @@
+'use client';
+
+import { RefObject, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Navigation } from './Navigation';
+import { VideoBackground } from './VideoBackground';
+import { LinkedInHoverCard } from './LinkedInHoverCard';
+import { useManagedVideoPlayback } from '../hooks/useManagedVideoPlayback';
+import type { Section } from '../constants/config';
+
+interface HeroSectionProps {
+  videoRef: RefObject<HTMLVideoElement | null>;
+  videoSrc: string;
+  isVisible: boolean;
+  showUI: boolean; // Controls UI elements animation separately
+  currentSection: Section;
+  onShowreelClick: () => void;
+  onAboutClick: () => void;
+  onCasesClick: () => void;
+  onContactClick: () => void;
+}
+
+export function HeroSection({
+  videoRef,
+  videoSrc,
+  isVisible,
+  showUI,
+  currentSection,
+  onShowreelClick,
+  onAboutClick,
+  onCasesClick,
+  onContactClick,
+}: HeroSectionProps) {
+  useManagedVideoPlayback(videoRef, {
+    enabled: isVisible,
+    name: 'Hero',
+    minReadyState: 2,
+    preloadFirstFrame: true,
+  });
+
+  // Detect mobile/touch device
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1199px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener?.('change', update);
+    return () => mq.removeEventListener?.('change', update);
+  }, []);
+
+  return (
+    <section
+      className={`fixed inset-0 w-full h-screen transition-opacity duration-0 ${
+        isVisible ? 'opacity-100 z-20' : 'opacity-0 pointer-events-none z-0'
+      }`}
+    >
+      <VideoBackground videoRef={videoRef} src={videoSrc} autoPlay loop />
+
+      {/* Overlay Content */}
+      <div className="relative z-10 h-full">
+        {/* Navigation - center on mobile, keep original absolute pos on desktop */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 sm:top-[390px] sm:translate-y-0">
+          <div className="flex flex-col items-center">
+            <Navigation
+              currentSection={currentSection}
+              onShowreelClick={onShowreelClick}
+              onAboutClick={onAboutClick}
+              onCasesClick={onCasesClick}
+              onContactClick={onContactClick}
+              isVisible={showUI}
+            />
+
+            {/* Scroll Indicator - Right below navigation */}
+            <motion.div
+              className="mt-4 text-white text-xs tracking-wider"
+              initial={{
+                filter: 'blur(10px)',
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                filter: showUI ? 'blur(0px)' : 'blur(10px)',
+                opacity: showUI ? 1 : 0,
+                y: showUI ? 0 : 20,
+              }}
+              transition={{
+                duration: showUI ? 0.6 : 0.4,
+                delay: showUI ? 0.7 : 0,
+                ease: [0.23, 1, 0.32, 1],
+              }}
+            >
+              {isMobile ? '*swipe to discover' : '*scroll to discover'}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center sm:left-16 sm:translate-x-0 sm:text-left text-white text-xs w-[calc(100%-2rem)] sm:w-auto px-4 sm:px-0"
+          initial={{
+            filter: 'blur(10px)',
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            filter: showUI ? 'blur(0px)' : 'blur(10px)',
+            opacity: showUI ? 1 : 0,
+            y: showUI ? 0 : 20,
+          }}
+          transition={{
+            duration: showUI ? 0.6 : 0.4,
+            delay: showUI ? 1.0 : 0,
+            ease: [0.23, 1, 0.32, 1],
+          }}
+        >
+          Copyright © 2026.{' '}
+          <LinkedInHoverCard
+            name="Ansh"
+            fullName="Ansh Agarwal"
+            href="https://www.linkedin.com/in/anshsagarwal/"
+            className="hover:text-red-400 transition-colors"
+          >
+            Ansh
+          </LinkedInHoverCard>
+          {' '}and{' '}
+          <LinkedInHoverCard
+            name="Kunal"
+            fullName="Kunal Chaudhari"
+            href="https://www.linkedin.com/in/kunal-r-chaudhari-3a7617351/"
+            className="hover:text-red-400 transition-colors"
+          >
+            Kunal
+          </LinkedInHoverCard>
+          . All rights reserved.
+        </motion.div>
+      </div>
+    </section>
+  );
+}
